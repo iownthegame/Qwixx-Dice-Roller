@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import ReactDice from 'react-dice-complete';
+import GithubCorner from 'react-github-corner';
+
 import 'react-dice-complete/dist/react-dice-complete.css';
 import './App.scss';
 
@@ -115,6 +117,7 @@ function App() {
         <RollButton diceRef={diceRef} dices={dices} />
         <TrashCan dices={dices} toggleDiceDisable={toggleDiceDisable} />
       </header>
+      <GithubCorner href="https://github.com/iownthegame/Qwixx-Dice-Roller" />
     </div>
   );
 }
