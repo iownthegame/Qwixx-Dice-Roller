@@ -7,7 +7,7 @@ Implement an online dice roller for [Qwixx](https://de.wikipedia.org/wiki/Qwixx)
 ## Demo
 [Project page](https://iownthegame.github.io/Qwixx-Dice-Roller/)
 
-![](https://github.com/iownthegame/Qwixx-Dice-Roller/blob/master/demo.png)
+![](https://github.com/iownthegame/Qwixx-Dice-Roller/blob/main/demo.png)
 
 ## Resource
  - [React Dice Complete](https://github.com/AdamTyler/react-dice-complete)
