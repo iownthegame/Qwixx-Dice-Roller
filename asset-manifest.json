@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Qwixx-Dice-Roller/static/css/main.2bfd814d.chunk.css",
+    "main.css": "/Qwixx-Dice-Roller/static/css/main.ba39132c.chunk.css",
     "main.js": "/Qwixx-Dice-Roller/static/js/main.3c87fa38.chunk.js",
     "main.js.map": "/Qwixx-Dice-Roller/static/js/main.3c87fa38.chunk.js.map",
     "runtime-main.js": "/Qwixx-Dice-Roller/static/js/runtime-main.18739bef.js",
@@ -10,7 +10,7 @@
     "static/js/2.ba95e502.chunk.js.map": "/Qwixx-Dice-Roller/static/js/2.ba95e502.chunk.js.map",
     "index.html": "/Qwixx-Dice-Roller/index.html",
     "static/css/2.0542f091.chunk.css.map": "/Qwixx-Dice-Roller/static/css/2.0542f091.chunk.css.map",
-    "static/css/main.2bfd814d.chunk.css.map": "/Qwixx-Dice-Roller/static/css/main.2bfd814d.chunk.css.map",
+    "static/css/main.ba39132c.chunk.css.map": "/Qwixx-Dice-Roller/static/css/main.ba39132c.chunk.css.map",
     "static/js/2.ba95e502.chunk.js.LICENSE.txt": "/Qwixx-Dice-Roller/static/js/2.ba95e502.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/Qwixx-Dice-Roller/static/media/trash_can.adc91f4b.png"
   },
@@ -18,7 +18,7 @@
     "static/js/runtime-main.18739bef.js",
     "static/css/2.0542f091.chunk.css",
     "static/js/2.ba95e502.chunk.js",
-    "static/css/main.2bfd814d.chunk.css",
+    "static/css/main.ba39132c.chunk.css",
     "static/js/main.3c87fa38.chunk.js"
   ]
 }
