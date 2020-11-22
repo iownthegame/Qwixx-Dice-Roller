@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import ReactDice from 'react-dice-complete';
 import 'react-dice-complete/dist/react-dice-complete.css';
-import './App.css';
+import './App.scss';
 
 const initialDices = [
   {
@@ -36,9 +36,10 @@ const initialDices = [
   }
 ]
 
-const Dice = ({ id, color, disable, diceRef, toggleDiceDisable }) => {
+const Dice = ({ dice, diceRef, toggleDiceDisable }) => {
+  const { id, color, disable } = dice
   return !disable && (
-    <div className='my-dice' onClick={()=>toggleDiceDisable(id)}>
+    <div className='my-dice' onClick={()=>toggleDiceDisable(dice)}>
       <ReactDice
         numDice={1}
         faceColor={color}
@@ -56,9 +57,7 @@ const Dices = ({ dices, diceRef, toggleDiceDisable }) => {
       {dices.map(dice =>
         <Dice
           key={dice.id}
-          id={dice.id}
-          color={dice.color}
-          disable={dice.disable}
+          dice={dice}
           diceRef={diceRef}
           toggleDiceDisable={toggleDiceDisable}
         />
@@ -76,15 +75,36 @@ const RollButton = ({ diceRef, dices }) => {
     })
   }
 
-  return <button onClick={rollAll}>Gooi</button>
+  return <button id="roll-button" onClick={rollAll}>Gooi</button>
+}
+
+const TrashCan = ({ dices, toggleDiceDisable }) => {
+  const disableDices = dices.filter(dice => dice.disable)
+
+  return disableDices.length > 0 && (
+    <div id="trash-can">
+      {disableDices.map(dice =>
+        <div className='trash-dice' onClick={()=>toggleDiceDisable(dice)}>
+          <ReactDice
+            numDice={1}
+            faceColor={dice.color}
+            dotColor={dice.color === '#f6f5f1' ? 'black' : '#f6f5f1'}
+            disableIndividual={true}
+            rollTime={0}
+            dieSize={30}
+          />
+        </div>
+      )}
+    </div>
+  )
 }
 
 function App() {
   const [dices, setDices] = useState(initialDices);
   const diceRef = useRef([]);
 
-  const toggleDiceDisable = (id) => {
-    setDices(dices.map(dice => dice.id === id ? {...dice, disable: !dice.disable} : dice))
+  const toggleDiceDisable = (currentDice) => {
+    setDices(dices.map(dice => dice.id === currentDice.id ? {...dice, disable: !dice.disable} : dice))
   }
 
   return (
@@ -93,6 +113,7 @@ function App() {
         <p>Qwixx Dice Roller</p>
         <Dices dices={dices} diceRef={diceRef} toggleDiceDisable={toggleDiceDisable} />
         <RollButton diceRef={diceRef} dices={dices} />
+        <TrashCan dices={dices} toggleDiceDisable={toggleDiceDisable} />
       </header>
     </div>
   );
